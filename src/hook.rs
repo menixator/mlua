@@ -23,6 +23,13 @@ pub struct Debug<'a> {
 }
 
 impl<'a> Debug<'a> {
+    /// Gets the event
+    pub fn event(&self) -> i32 {
+        unsafe {
+            (*self.ar).event
+        }
+    }
+
     /// Corresponds to the `n` what mask.
     pub fn names(&self) -> DebugNames<'a> {
         unsafe {
